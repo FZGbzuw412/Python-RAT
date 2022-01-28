@@ -3,5 +3,5 @@ pywin32
 comtypes
 pycaw
 pyautogui
-cv2
+opencv-python
 json
