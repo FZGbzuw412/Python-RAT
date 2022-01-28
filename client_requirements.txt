@@ -4,4 +4,3 @@ comtypes
 pycaw
 pyautogui
 opencv-python
-json
