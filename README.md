@@ -16,9 +16,10 @@ Windows systems
 + Pillow
 + pywin32
 + opencv-python
-+ comtypes
-+ pycaw
++ comtypes 
++ pycaw (C++ [Buils tools](https://visualstudio.microsoft.com/ru/visual-cpp-build-tools/) are required)
 + pyautogui
++ vidstream ([VS Code](https://code.visualstudio.com/) is required) (optional feature)
 
 ## Usage for server
 ```
