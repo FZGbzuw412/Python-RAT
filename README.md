@@ -47,90 +47,10 @@ pip3 install -r client_requirements.txt
 client.pyw
 ```
 
-##Features
+## Features
+![изображение](https://user-images.githubusercontent.com/92334349/151528654-e2c6ffb4-33df-430b-a965-07fac7773c19.png)
 
-System:
-<br/>
-help                      all commands available
-writein <text>            write the text to current opened window
-browser                   enter quiery to browser
-turnoffmon                turn off the monitor
-turnonmon                 turn on the monitor
-reboot                    reboot the system
-drivers                   all drivers of PC
-kill                      kill the system task
-sendmessage               send messagebox with the text
-cpu_cores                 number of CPU cores
-systeminfo (extended)     all basic info about system (via cmd)
-tasklist                  all system tasks
-localtime                 current system time
-curpid                    PID of client's process
-sysinfo (shrinked)        basic info about system (Powers of Python)
-shutdown                  shutdown client's PC
-isuseradmin               check if user is admin
-extendrights              extend system rights
-disabletaskmgr            disable Task Manager
-enabletaskmgr             enable Task Manager
-disableUAC                disable UAC
-monitors                  get all used monitors
-geolocate                 get location of computer
-volumeup                  increase system volume to 100%
-volumedown                decrease system volume to 0%
-setvalue                  set value in registry
-delkey                    delete key in registry
-createkey                 create key in registry
-setwallpaper              set wallpaper
-exit                      terminate the session of RAT
-
-Shell:
-<br/>
-pwd                       get current working directory
-shell                     execute commands via cmd
-cd                        change directory
-[Driver]:                 change current driver
-cd ..                     change directory back
-dir                       get all files of current directory
-abspath                   get absolute path of files
-
-Network:
-<br/>
-ipconfig                  local ip
-portscan                  port scanner
-profiles                  network profiles
-profilepswd               password for profile
-
-Input devices:
-<br/>
-keyscan_start             start keylogger
-send_logs                 send captured keystrokes
-stop_keylogger            stop keylogger
-disable(--keyboard/--mouse/--all) 
-enable(--keyboard/--mouse/--all)
-
-Video:
-<br/>
-screenshare               overseing remote PC
-webcam                    webcam video capture
-breakstream               break webcam/screenshare stream
-screenshot                capture screenshot
-webcam_snap               capture webcam photo
-
-Files:
-<br/>
-delfile <file>            delete file
-editfile <file> <text>    edit file
-createfile <file>         create file
-download <file> <homedir> download file
-upload                    upload file
-cp <file1> <file2>        copy file
-mv <file> <path>          move file
-searchfile <file> <dir>   search for file in mentioned directory
-mkdir <dirname>           make directory
-rmdir <dirname>           remove directory
-startfile <file>          start file
-readfile <file>           read from file
-<br/>
- 
+![изображение](https://user-images.githubusercontent.com/92334349/151528715-c83b5d21-4df4-4143-acf4-a67907e180de.png)
 
 ## Licence
   
