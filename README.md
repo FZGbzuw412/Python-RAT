@@ -29,6 +29,9 @@ https://github.com/FZGbzuw412/Python-RAT
 #go to directory with files
 cd Python-RAT 
 
+#install essential requirements
+pip3 install -r server_requirements.txt
+
 #launch 
 server.py
 ```
