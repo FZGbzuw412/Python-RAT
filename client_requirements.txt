@@ -1,0 +1,6 @@
+Pillow
+comtypes
+pycaw
+pyautogui
+opencv-python
+vidstream
