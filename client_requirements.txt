@@ -4,3 +4,6 @@ pycaw
 pyautogui
 opencv-python
 vidstream
+comtypes
+pynput
+keyboard
