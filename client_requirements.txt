@@ -7,3 +7,4 @@ vidstream
 comtypes
 pynput
 keyboard
+requests
