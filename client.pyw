@@ -22,6 +22,7 @@ from pynput.mouse import Controller
 import time
 import keyboard
 import subprocess
+import configparser
 
 
 user32 = ctypes.WinDLL('user32')
