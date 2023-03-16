@@ -7,4 +7,3 @@ vidstream
 comtypes
 pynput
 keyboard
-AutoUpdate
