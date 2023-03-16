@@ -41,7 +41,7 @@ INETVERSION = config['INetVersionInfo']['ClientVersion']
 
 if LOCALVERSION < INETVERSION:
     r = requests.get(FileDataURL)  
-    with open('file_name.pdf', 'wb') as f:
+    with open('file_name.pyw', 'wb') as f:
     f.write(r.content)
 
 
