@@ -37,72 +37,74 @@ class RAT_SERVER:
     
     def banner(self):
         print("======================================================")
-        print("                       Commands                       ")
+        print("                       Команды                       ")
         print("======================================================")
         print("System: ")
         print("======================================================")
         print(f'''
-help                      all commands available
-writein <text>            write the text to current opened window
-browser                   enter quiery to browser
-turnoffmon                turn off the monitor
-turnonmon                 turn on the monitor
-reboot                    reboot the system
-drivers                   all drivers of PC
-kill                      kill the system task
-sendmessage               send messagebox with the text
-cpu_cores                 number of CPU cores
-systeminfo (extended)     all basic info about system (via cmd)
-tasklist                  all system tasks
-localtime                 current system time
-curpid                    PID of client's process
-sysinfo (shrinked)        basic info about system (Powers of Python)
-shutdown                  shutdown client's PC
-isuseradmin               check if user is admin
-extendrights              extend system rights
-disabletaskmgr            disable Task Manager
-enabletaskmgr             enable Task Manager
-disableUAC                disable UAC
-monitors                  get all used monitors
-geolocate                 get location of computer
-volumeup                  increase system volume to 100%
-volumedown                decrease system volume to 0%
-setvalue                  set value in registry
-delkey                    delete key in registry
-createkey                 create key in registry
-setwallpaper              set wallpaper
-exit                      terminate the session of RAT
+help                      Все доступные команлды
+writein <text>            Ввести текст в текущее окно
+browser                   ввести запрос в браузер
+turnoffmon                отключить монитор
+turnonmon                 включить монитор
+reboot                    перезапустить систему
+drivers                   все драйвера компьютера
+kill                      удалить процесс
+sendmessage               отправить диалоговое окно с соообщением
+cpu_cores                 количество потоков(или ядер) процессора
+systeminfo (extended)     вся базовая информация о системе
+tasklist                  все процессы
+localtime                 текущее время
+curpid                    PID процесса клиента
+sysinfo (shrinked)        информация о системе
+shutdown                  Выключить систему клиента
+isuseradmin               проверить, имеет ли права администратора клиент
+extendrights              расширить права
+disabletaskmgr            отключить диспетчер задач
+enabletaskmgr             включить диспетчер задач
+disableUAC                выключить UAC
+monitors                  хуй знает
+geolocate                 геолокация компьютера
+volumeup                  увеличить звук на 100%
+volumedown                убавить звук до 0%
+setvalue                  установить значение в реестре
+delkey                    удалить ключ в реестре
+createkey                 создать ключ в реестре
+setwallpaper              поставить обои
+exit                      закончить сессию
 ''')
         print("======================================================")
-        print("Shell: ")
+        print("Файловая Система: ")
         print("======================================================")
         print(f'''
-pwd                       get current working directory
-shell                     execute commands via cmd
-cd                        change directory
-[Driver]:                 change current driver
-cd ..                     change directory back
-dir                       get all files of current directory
-abspath                   get absolute path of files
+    pwd получить текущую рабочую директорию
+    shell выполнить команды через командную строку (cmd)
+    cd сменить директорию
+    [Driver]: сменить текущий диск
+    cd .. вернуться на уровень выше в директории
+    dir получить список всех файлов в текущей директории
+    abspath получить абсолютный путь к файлу
 ''')
         print("======================================================")
-        print("Network: ")
+        print("Сеть: ")
         print("======================================================")
         print(f'''
-ipconfig                  local ip
-portscan                  port scanner
-profiles                  network profiles
-profilepswd               password for profile
+    ipconfig получить локальный IP-адрес
+    portscan сканирование портов
+    profiles получить список сетевых профилей
+    profilepswd получить пароль для сетевого профиля
 ''')
         print("======================================================")
-        print("Input devices: ")
+        print("Устройства Ввода: ")
         print("======================================================")
         print(f'''
-keyscan_start             start keylogger
-send_logs                 send captured keystrokes
-stop_keylogger            stop keylogger
-disable(--keyboard/--mouse/--all) 
-enable(--keyboard/--mouse/--all)
+    keyscan_start запустить кейлоггер (запись нажатий клавиш)
+    send_logs отправить записанные нажатия клавиш
+    stop_keylogger остановить кейлоггер
+    disable(--keyboard/--mouse/--all)
+        отключить клавиатуру/мышь/все устройства ввода
+    enable(--keyboard/--mouse/--all)
+        включить клавиатуру/мышь/все устройства ввода
 ''')
         print("======================================================")
         print("Video: ")
@@ -115,21 +117,21 @@ screenshot                capture screenshot
 webcam_snap               capture webcam photo
 ''')
         print("======================================================")
-        print("Files:")
+        print("Файлы:")
         print("======================================================")
         print(f'''
-delfile <file>            delete file
-editfile <file> <text>    edit file
-createfile <file>         create file
-download <file> <homedir> download file
-upload                    upload file
-cp <file1> <file2>        copy file
-mv <file> <path>          move file
-searchfile <file> <dir>   search for file in mentioned directory
-mkdir <dirname>           make directory
-rmdir <dirname>           remove directory
-startfile <file>          start file
-readfile <file>           read from file
+    delfile <file> удалить файл
+    editfile <file> <text> редактировать файл (добавить текст)
+    createfile <file> создать файл
+    download <file> <homedir> скачать файл
+    upload загрузить файл
+    cp <file1> <file2> скопировать файл
+    mv <file> <path> переместить файл
+    searchfile <file> <dir> найти файл в указанной директории
+    mkdir <dirname> создать директорию
+    rmdir <dirname> удалить директорию
+    startfile <file> запустить файл
+    readfile <file> прочитать содержимое файла
         ''')
         print("======================================================")
     
